@@ -24,7 +24,7 @@ const winMessage = (player) => {
   } else {
     container.style.backgroundColor = 'rgba(240,118,128,0.726)';
     alert.style.backgroundColor = 'rgba(240,118,128,0.726)';
-    alert.style.color = 'green';
+    alert.style.color = 'purple';
     alert.style.display = 'block';
     alert.textContent = 'player x wins';
   }
@@ -37,7 +37,19 @@ const tieMessage = () => {
   alert.textContent = 'tie';
 };
 
-tieMessage('');
+//tieMessage('');
+winMessage('o');
+
+const reset = () => {
+  alert.style.display = 'none';
+  container.style.backgroundColor = '#666';
+  allLi.forEach((item) => {
+    item.textContent = '+';
+    item.classList = '';
+  });
+};
+
+resetBtn.addEventListener('click', reset);
 
 /*
       <ul class="board">
@@ -54,7 +66,7 @@ tieMessage('');
 
       player o win
       <ul class="board">
-        <li class="o">o</li>
+        <li class="o disabled">o</li>
         <li>+</li>
         <li class="x">x</li>
         <li class="o">o</li>
@@ -66,6 +78,17 @@ tieMessage('');
       </ul>
 
 player x win
+  <ul class="board">
+        <li class="o">o</li>
+        <li>+</li>
+        <li class="x">x</li>
+        <li class="o">o</li>
+        <li class="x">x</li>
+        <li>+</li>
+        <li class="x">x</li>
+        <li>+</li>
+        <li class="o">o</li>
+      </ul>
 
 
 
