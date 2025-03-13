@@ -5,7 +5,7 @@ const result1 = document.querySelector('.result1');
 const result2 = document.querySelector('.result2');
 
 const computePass = (s) => {
-  let Pass = 0;
+  let pass = 0;
   s.forEach((score) => {
     if (score >= 59.5) pass++;
   });
@@ -13,7 +13,7 @@ const computePass = (s) => {
 };
 
 const computeFail = (s) => {
-  let Pass = 0;
+  let fail = 0;
   s.forEach((score) => {
     if (score >= 59.5) fail++;
   });
@@ -23,9 +23,27 @@ const computeFail = (s) => {
 const computeHighest = (s) => {
   let highest = -100;
   s.forEach((score) => {
-    if (score)
-  })
-}
+    if (score > highest) highest = score;
+  });
+  return highest;
+};
+
+const computeLowest = (s) => {
+  let lowest = 200;
+  s.forEach((score) => {
+    if (score < lowest) lowest = score;
+  });
+  return lowest;
+};
+
+const computeAverage = (s) => {
+  let sum = 0;
+  s.forEach((score) => {
+    //sum = sum + score;
+    sum += score;
+  });
+  return sum / s.length;
+};
 
 const outputStat1 = (s) => {
   result1.innerHTML = `
@@ -33,14 +51,14 @@ const outputStat1 = (s) => {
   <p>sdata original: </p>
     <p>${JSON.stringify(s)}</p>
     <p>Total: ${s.length}</p>
-    <p>Pass: 4</p>
-    <p>Fail: 2</p>
-    <p>Highest: 100</p>
-    <p>Lowest: 20</p>
-    <p>Average: 65.2</p>
+    <p>Pass: ${computePass(s)}</p>
+    <p>Fail: ${computeFail(s)}</p>
+    <p>Highest: ${computeHighest(s)}</p>
+    <p>Lowest: ${computeLowest(s)}</p>
+    <p>Average: ${computeAverage(s).toFixed(1)}</p>
   `;
 };
 
-sdata.push(85);
+//sdata.push(85);
 
 outputStat1(sdata);
