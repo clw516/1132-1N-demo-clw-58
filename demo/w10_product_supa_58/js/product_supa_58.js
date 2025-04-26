@@ -1,17 +1,27 @@
-import { mid_products_xx } from './products_data_58.js';
+import { _supabase } from './clientSupabase_58.js';
 
 const productContainer = document.querySelector('.products-container');
 
-console.log('mid_products_xx', mid_products_xx);
+let products_58 =[]
+
+const fetchProducts = async () => {
+  try{
+    let { data, error } = await _supabase.from('product_58').select('*');
+    console.log('data', data);
+    return data;
+  }catch(err){
+    console.log(err);
+  }
+};
 
 const displayProducts = (products) => {
   let productsContent = products
     .map((product) => {
-      const { id, title, price, img } = product;
+      const { id, title, price, remote_img } = product;
       return `
         <div class="single-product">
         <img
-          src=${img}
+          src=${remote_img}
           class="single-product-img img"
           alt=${title}
         />
@@ -27,5 +37,7 @@ const displayProducts = (products) => {
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
-  displayProducts(mid_products_xx);
+  products_58 = await fetchProducts();
+  console.log('projects_58', products_58);
+  displayProducts(products_58);
 });

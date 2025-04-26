@@ -1,0 +1,4 @@
+const SUPABASE_URL = 'https://nyfnsbncovedlqiwooyl.supabase.co';
+const SUPABASE_ANON_KEY ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im55Zm5zYm5jb3ZlZGxxaXdvb3lsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU2NTMxMDgsImV4cCI6MjA2MTIyOTEwOH0.6NE8c02iBFQHrVpl2NB6h3UmfJjnfQQ71ggZKpGoS4Y';
+
+export const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
