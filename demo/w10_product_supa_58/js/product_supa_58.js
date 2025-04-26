@@ -17,11 +17,11 @@ const fetchProducts = async () => {
 const displayProducts = (products) => {
   let productsContent = products
     .map((product) => {
-      const { id, title, price, remote_img } = product;
+      const { id, title, price, img } = product;
       return `
         <div class="single-product">
         <img
-          src=${remote_img}
+          src=${img}
           class="single-product-img img"
           alt=${title}
         />
@@ -38,6 +38,6 @@ const displayProducts = (products) => {
 
 document.addEventListener('DOMContentLoaded', async () => {
   products_58 = await fetchProducts();
-  console.log('projects_58', products_58);
+  //console.log('projects_58', products_58);
   displayProducts(products_58);
 });

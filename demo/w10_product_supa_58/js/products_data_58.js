@@ -1,4 +1,4 @@
-export const mid_products_xx = [
+export const mid_products_58 = [
   {
     id: 6,
     title: 'Entertainmint Center',
@@ -33,7 +33,7 @@ export const mid_products_xx = [
   },
 ];
 
-export const products_xx = [
+export const products_58 = [
   {
     id: 1,
     title: 'Emperor Bed',
