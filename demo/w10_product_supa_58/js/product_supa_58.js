@@ -2,14 +2,14 @@ import { _supabase } from './clientSupabase_58.js';
 
 const productContainer = document.querySelector('.products-container');
 
-let products_58 =[]
+let products_58 = [];
 
 const fetchProducts = async () => {
-  try{
+  try {
     let { data, error } = await _supabase.from('product_58').select('*');
     console.log('data', data);
     return data;
-  }catch(err){
+  } catch (err) {
     console.log(err);
   }
 };
